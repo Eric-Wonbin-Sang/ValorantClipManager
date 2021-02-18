@@ -1,9 +1,11 @@
 import os
 
+from General import Constants
+
 
 class Session:
 
-    max_seconds_between_clips = 60 * 60 * 4
+    max_seconds_between_clips = Constants.session_max_seconds_between_clips
 
     def __init__(self, parent_dir, clip_list):
 
