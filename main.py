@@ -11,12 +11,16 @@ def get_clips(clip_dir):
 def main():
 
     clip_list = get_clips(Constants.valorant_clips_dir)
-    # for clip in clip_list:
-    #     print(clip)
 
-    session_list = Session.divide_clips_to_sessions(clip_list)
-    # for session in session_list:
-    #     print(session)
+    if len(clip_list) > 0:
+        session_list = Session.divide_clips_to_sessions(
+            parent_dir=Constants.session_parent_dir,
+            clip_list=clip_list
+        )
+        for session in session_list:
+            print(session)
+    else:
+        print("There are no clips!")
 
 
 if __name__ == '__main__':
